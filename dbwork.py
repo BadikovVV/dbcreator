@@ -18,7 +18,7 @@ def createDB(dbName):
 def createUser(userName,passwd,dbname):
 # creating user 
 	conn=connRoot()
-	sql='grant select ,insert  on '+dbname +'.* to '+userName
+	sql='grant select ,insert, update  on '+dbname +'.* to '+userName
 	sql+='@localhost identified by \''+passwd+'\''
 	try:
                 with  conn.cursor() as cursor:
